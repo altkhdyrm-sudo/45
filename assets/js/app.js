@@ -1248,33 +1248,72 @@ function renderResultsScreen(container) {
   // Calculate Badge Achievements
   let badgeHTML = "";
   if (answeredCount === totalQuestions) {
-    let badgeImg = "";
+    let badgeSvg = "";
     let badgeTitle = "";
     let badgeColorClass = "";
     let badgeDesc = "";
 
     if (percentage >= 90) {
-      badgeImg = "brand/madrasati-logo.png"; // Official branding image placeholder
       badgeTitle = "وسام التميز الأكاديمي الذهبي";
       badgeColorClass = "badge-gold";
       badgeDesc = "ألف مبروك! لقد أتممت حل جميع الأسئلة وحققت مستوى تمكن استثنائي باهر (90% فما فوق). أنت بطل حقيقي وقائد متميز في قواعد اللغة العربية!";
+      badgeSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="badge-glowing-image" style="width: 130px; height: 130px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));">
+          <circle cx="50" cy="50" r="40" fill="url(#goldGradient)" stroke="#EAB308" stroke-width="4"/>
+          <circle cx="50" cy="50" r="32" fill="none" stroke="#CA8A04" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="50,23 57,38 73,41 62,53 65,69 50,61 35,69 38,53 27,41 43,38" fill="#FFE082" stroke="#B7791F" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FEF08A"/>
+              <stop offset="50%" stop-color="#EAB308"/>
+              <stop offset="100%" stop-color="#CA8A04"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
     } else if (percentage >= 70) {
-      badgeImg = "brand/madrasati-logo.png";
       badgeTitle = "وسام الإبداع اللغوي الفضي";
       badgeColorClass = "badge-silver";
       badgeDesc = "أداء ممتاز جداً! أتممت حل جميع الأسئلة بمهارة عالية ودقة ممتازة (70% - 89%). واصل هذا التميز اللغوي الرائع لتعتلي الصدارة دائماً!";
+      badgeSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="badge-glowing-image" style="width: 130px; height: 130px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));">
+          <circle cx="50" cy="50" r="40" fill="url(#silverGradient)" stroke="#94A3B8" stroke-width="4"/>
+          <circle cx="50" cy="50" r="32" fill="none" stroke="#64748B" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="50,23 57,38 73,41 62,53 65,69 50,61 35,69 38,53 27,41 43,38" fill="#E2E8F0" stroke="#475569" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F1F5F9"/>
+              <stop offset="50%" stop-color="#94A3B8"/>
+              <stop offset="100%" stop-color="#64748B"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
     } else {
-      badgeImg = "brand/madrasati-logo.png";
       badgeTitle = "وسام المثابرة والاجتهاد البرونزي";
       badgeColorClass = "badge-bronze";
       badgeDesc = "أحسنت صنعاً! لقد أثبتّ التزامك التام وحللت جميع أسئلة الوحدة بجد واجتهاد. استمر في المراجعة والتدرب لتطوير نقاط تمكنك وستصل للذهبي قريباً!";
+      badgeSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="badge-glowing-image" style="width: 130px; height: 130px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));">
+          <circle cx="50" cy="50" r="40" fill="url(#bronzeGradient)" stroke="#D97706" stroke-width="4"/>
+          <circle cx="50" cy="50" r="32" fill="none" stroke="#B45309" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="50,23 57,38 73,41 62,53 65,69 50,61 35,69 38,53 27,41 43,38" fill="#FDE68A" stroke="#78350F" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="bronzeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FDE68A"/>
+              <stop offset="50%" stop-color="#D97706"/>
+              <stop offset="100%" stop-color="#92400E"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
     }
 
     badgeHTML = `
       <div class="achievement-badge-card ${badgeColorClass}">
         <div class="badge-ribbon">وسام الإنجاز والتمكن</div>
-        <div class="badge-image-container">
-          <img src="${badgeImg}" alt="${badgeTitle}" class="badge-glowing-image" referrerPolicy="no-referrer" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23EAB308%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-weight=%22bold%22>مدرسي</text></svg>';">
+        <div class="badge-image-container" style="background: none; box-shadow: none;">
+          ${badgeSvg}
         </div>
         <h3 class="badge-card-title">${badgeTitle}</h3>
         <p class="badge-card-desc">${badgeDesc}</p>
