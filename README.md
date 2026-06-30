@@ -1,20 +1,11 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# تطبيق مدرسي — التقييم الذاتي لمحمد سعيد الحبوبي وعلي الشرقي
 
-# Run and deploy your AI Studio app
+تطبيق ويب ساكن (Pure Static HTML5) للتقييم الذاتي في قواعد اللغة العربية والأسئلة الوزارية الخاصة بالشاعرين محمد سعيد الحبوبي وعلي الشرقي.
 
-This contains everything you need to run your app locally.
+## بنية المشروع
 
-View your app in AI Studio: https://ai.studio/apps/26477bbf-4072-4d31-8e9b-edd716898863
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- `index.html` - الصفحة الرئيسية والواجهة البرمجية.
+- `assets/css/style.css` - ملف التنسيقات وتصميم واجهة المستخدم.
+- `assets/js/questions.js` - قاعدة البيانات البرمجية للأسئلة والمواضيع اللغوية.
+- `assets/js/app.js` - محرك التطبيق لإدارة التنقل، التقييم، وحساب النتائج والأوسمة عبر `localStorage`.
+- `assets/images/` - يحتوي على الشعار الرسمي للتطبيق.

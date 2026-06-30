@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Local server & package files for sandbox hosting only (not committed to Git)
+package.json
+package-lock.json
+server.js
