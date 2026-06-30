@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+  @license
+  SPDX-License-Identifier: Apache-2.0
+-->
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تطبيق مدرسي — التقييم الذاتي لمحمد سعيد الحبوبي وعلي الشرقي</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" type="image/png" href="brand/madrasati-logo.png">
+  <script src="./assets/js/questions.js" type="module" defer></script>
+  <script src="./assets/js/app.js" type="module" defer></script>
+</head>
+<body>
+
+  <!-- Top Simple Navigation Header -->
+  <nav class="navbar">
+    <div class="brand" id="nav-brand" style="cursor: pointer;">
+      <img class="brand-logo" src="brand/madrasati-logo.png" alt="تطبيق مدرسي" onerror="if (this.src.indexOf('.jpg') === -1) { this.src='brand/madrasati-logo.jpg'; } else { this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%235B2596%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-size=%2210%22 font-weight=%22bold%22>مدرسي</text></svg>'; }">
+      <span class="brand-name">تطبيق مدرسي</span>
+    </div>
+    
+    <div class="nav-actions">
+      <!-- Back to home icon -->
+      <button class="btn btn-secondary" id="nav-home-btn" onclick="navigateTo('home')" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        الرئيسية
+      </button>
+
+      <!-- Theme Switcher -->
+      <button class="btn btn-secondary btn-circle" id="theme-toggle" title="تبديل الوضع الليلي والنهاري">
+        <span id="theme-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="container" id="main-content">
+    <!-- Active screen is dynamically rendered here -->
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <p>© ٢٠٢٦ تطبيق مدرسي التعليمي — جميع الأسئلة والأجوبة مأخوذة بأمانة تامة من المصادر الرسمية لوزارة التربية العراقية.</p>
+  </footer>
+
+  <!-- Reset Confirmation Modal -->
+  <div class="modal" id="reset-modal">
+    <div class="modal-content">
+      <h3 class="modal-title">تنبيه تأكيد إعادة المحاولة</h3>
+      <p class="modal-text">هل أنت متأكد من رغبتك في حذف جميع إجاباتك السابقة، التقييمات الذاتية، ومستويات تمكنك وبدء محاولة نظيفة من الصفر؟ لا يمكن التراجع عن هذا الإجراء.</p>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="modal-confirm" style="background-color: #991b1b;">نعم، ابدأ محاولة جديدة</button>
+        <button class="btn btn-secondary" id="modal-cancel">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

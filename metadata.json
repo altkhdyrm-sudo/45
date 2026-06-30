@@ -1,0 +1,6 @@
+{
+  "name": "منصة مدرسي — أسئلة الحبوبي والشرقي",
+  "description": "تطبيق مدرسي للتقييم الذاتي في قواعد اللغة العربية والأسئلة الوزارية الخاصة بالشاعرين محمد سعيد الحبوبي وعلي الشرقي.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
